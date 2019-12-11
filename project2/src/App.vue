@@ -1,15 +1,25 @@
 <template>
-  <div id="app">
-    
+  <div>
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ getTitle() }}</p>
   </div>
 </template>
 
 <script>
-
-
 export default {
-  name: 'app',
-   
-}
+  name: "app",
+  data() {
+    return {
+      title: "Some title",
+      url: "https://google.com"
+    };
+  },
+  methods: {
+    getTitle() {
+      this.title = "Some other title";
+      return this.title;
+    }
+  }
+};
 </script>
 
